@@ -26,9 +26,10 @@ public class NameDetailFragment extends Fragment {
 		
 		//traemos los datos que recibimos dentro de la actividad
 		Bundle arguments = getArguments();
+		if(arguments != null ){
 		String name = (String)arguments.get(MainActivity.NAME_TAG);
-		
 		setName(name);
+		}
 		
 		
 	}

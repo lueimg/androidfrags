@@ -2,12 +2,15 @@ package com.example.ejemplo;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +38,21 @@ public class MainActivity extends ActionBarActivity {
         		android.R.layout.simple_list_item_1,
         		names);
         list.setAdapter(adapter);
+        
+        list.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				
+				String name = adapter.getItem(position);
+				Intent action = new Intent(getApplicationContext(),NameDetailActivity.class);
+				action.putExtra(NAME_TAG, name);
+				startActivity(action); 
+				
+			}
+		});
         
         
         btn_submit.setOnClickListener(new OnClickListener() {
