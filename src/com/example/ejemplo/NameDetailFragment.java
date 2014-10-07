@@ -29,7 +29,7 @@ public class NameDetailFragment extends Fragment {
 		if(arguments != null ){
 		String name = (String)arguments.get(MainActivity.NAME_TAG);
 		setName(name);
-		}
+		} 
 		
 		
 	}

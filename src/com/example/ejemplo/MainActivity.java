@@ -3,8 +3,10 @@ package com.example.ejemplo;
 import java.util.ArrayList;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +19,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity {
 	
 	public static final String NAME_TAG = "name";
 	
@@ -47,9 +49,20 @@ public class MainActivity extends ActionBarActivity {
 				// TODO Auto-generated method stub
 				
 				String name = adapter.getItem(position);
+				
+				if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+				
 				Intent action = new Intent(getApplicationContext(),NameDetailActivity.class);
 				action.putExtra(NAME_TAG, name);
 				startActivity(action); 
+				}else{
+					
+					FragmentManager fm = getSupportFragmentManager();
+					NameDetailFragment frag = (NameDetailFragment)
+							fm.findFragmentById(R.id.detail_fragment);
+					frag.setName(name);
+				}
+				
 				
 			}
 		});
