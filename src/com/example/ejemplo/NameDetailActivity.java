@@ -1,6 +1,7 @@
 package com.example.ejemplo;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +12,12 @@ public class NameDetailActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_name_detail);
+		
+		
+		Intent i = getIntent();
+		String name = i.getStringExtra(MainActivity.NAME_TAG); 
+		
+		
 	}
 
 	@Override
@@ -19,7 +26,7 @@ public class NameDetailActivity extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.name_detail, menu);
 		return true;
 	}
-
+ 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
