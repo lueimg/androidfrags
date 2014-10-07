@@ -5,8 +5,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="msg_open">Open</string>
-     <string name="msg_close">Close</string>
-	<string name="input_message">Ingrese aqui</string>
-	<string name="hint_add_name">Ingrese un nombre</string>
-	<string name="btn_submit">Enviar</string>
+    <string name="msg_close">Close</string>
+    <string name="input_message">Ingrese aqui</string>
+    <string name="hint_add_name">Ingrese un nombre</string>
+    <string name="btn_submit">Enviar</string>
+    <string name="title_activity_name_detail">NameDetailActivity</string>
+
 </resources>

@@ -11,6 +11,8 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 	
+	public static final String NAME_TAG = "name";
+	
 	private final static String TAG= "Debug";
 
     @Override
