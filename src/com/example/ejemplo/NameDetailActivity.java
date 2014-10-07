@@ -1,12 +1,13 @@
 package com.example.ejemplo;
 
-import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class NameDetailActivity extends ActionBarActivity {
+public class NameDetailActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +17,15 @@ public class NameDetailActivity extends ActionBarActivity {
 		
 		Intent i = getIntent();
 		String name = i.getStringExtra(MainActivity.NAME_TAG); 
+		
+		//instanciamos el fragmento
+		FragmentManager fm = getSupportFragmentManager();
+		NameDetailFragment frag = (NameDetailFragment)
+				fm.findFragmentById(R.id.detail_fragment);
+		
+		frag.setName(name);
+		
+		
 		
 		
 	}

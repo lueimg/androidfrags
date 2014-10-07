@@ -42,6 +42,8 @@ public class NameDetailFragment extends Fragment {
 		//se gusca el edittext del view del que se inflo
 		//si no se usa view. , findviewbyid devuelve nulo
 		txt_name = (TextView)view.findViewById(R.id.txt_name);
+		
+		
 		return view;
 	}
 
